@@ -99,7 +99,7 @@ class Paket_wisata extends CI_Controller
         $contet_data['show_at_home'] = '';
         $contet_data['nama_wisata'] = '';
         $contet_data['foto'] = '';
-        $contet_data['destinasi'] = '';
+        $contet_data['destinasi'] = array();
         $contet_data['harga'] = '';
 
         $db = $this->db->where('paket_wisata.id_wisata', $id)->get('paket_wisata');

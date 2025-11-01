@@ -33,7 +33,7 @@
             <div style="text-align: end;">
 
                 <button type="submit" class="btn btn-primary">save</button>
-                <a class="btn btn-secondary" href="<?= base_url('baner') ?>">Kembali</a>
+                <a class="btn btn-secondary" href="<?= base_url('kontak') ?>">Kembali</a>
             </div>
             <b> (*) Wajib Diisi </b>
         </form>

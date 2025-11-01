@@ -91,7 +91,7 @@
             <div style="text-align: end;">
 
                 <button type="submit" class="btn btn-primary">save</button>
-                <a class="btn btn-secondary" href="<?= base_url('kendaraan') ?>">Kembali</a>
+                <a class="btn btn-secondary" href="<?= base_url('paket_wisata') ?>">Kembali</a>
             </div>
             <b> (*) Wajib Diisi </b>
         </form>
