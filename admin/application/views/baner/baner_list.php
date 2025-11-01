@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-        <a class="btn btn-primary" href="<?= base_url('m_kategori/add') ?>">Add</a>
+        <!-- <a class="btn btn-primary" href="<?= base_url('m_kategori/add') ?>">Add</a> -->
         <br>
         <br>
         <table id="dtt_tables" class="table table-bordered">

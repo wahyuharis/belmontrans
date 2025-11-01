@@ -8,7 +8,7 @@
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome (ikon) -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <style>
         /* Warna custom untuk top bar */
@@ -107,6 +107,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             z-index: 999;
             transition: all 0.3s ease;
+            padding-top: 6px;
         }
 
         .whatsapp-float i {
@@ -126,13 +127,50 @@
             /* opsional: pemisah */
             padding: 10px;
         }
-        .carousel-item{
+
+        .carousel-item {
             background-color: #878787 !important;
         }
+
         .carousel-item img {
             opacity: 0.7;
             width: 100%;
             height: 500px;
+        }
+
+
+
+        footer {
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            padding-top: 60px;
+            border-top: 1px solid #ccc;
+        }
+
+        .footer-logo img {
+            height: 80px;
+        }
+
+        .footer-btn {
+            background-color: #f1c40f;
+            color: #000;
+            border-radius: 50px;
+            font-weight: 600;
+            padding: 12px 30px;
+            text-decoration: none;
+        }
+
+        .footer-btn:hover {
+            background-color: #e0b90e;
+            color: #000;
+        }
+
+        .footer-bottom {
+            font-size: 14px;
+            border-top: 1px solid #ccc;
+            padding: 15px 0;
+            color: #555;
         }
     </style>
 </head>
@@ -148,7 +186,7 @@
                 <i class="fa-solid fa-envelope me-2"></i> info@mywebsite.com
             </div>
             <div>
-                <a href="#" class="text-white me-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white me-2"><i class="fab fa-tiktok"></i></a>
                 <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="text-white"><i class="fab fa-whatsapp"></i></a>
             </div>
@@ -179,7 +217,7 @@
                 <!-- Tombol WhatsApp -->
                 <a href="https://wa.me/6281234567890?text=Halo%20Belmontransport,%20saya%20ingin%20bertanya."
                     target="_blank" class="btn btn-whatsapp-nav ms-lg-3 mt-2 mt-lg-0">
-                    <i class="fab fa-whatsapp me-2"></i>Hubungi Kami
+                    <i class="fab fa-whatsapp fa-lg"></i>Hubungi Kami
                 </a>
             </div>
         </div>
@@ -201,7 +239,7 @@
                     <p>Tersedia Berbagai Paket Mobil Yang Siap Di Sewa Dengan Driver Atau Tanpa Driver.</p>
                     <p>
                         <a href="rental.html" class="btn btn-whatsapp-nav">
-                            <i class="fab fa-whatsapp me-2"></i>Hubungi Kami
+                            <i class="fab fa-whatsapp fa-lg"></i>Hubungi Kami
                         </a>
                     </p>
                 </div>
@@ -213,7 +251,7 @@
                     <p>Tersedia Berbagai Macam Paket Wisata Yang Menarik Sesuai Kebutuhan Anda.</p>
                     <p>
                         <a href="rental.html" class="btn btn-whatsapp-nav">
-                            <i class="fab fa-whatsapp me-2"></i>Hubungi Kami
+                            <i class="fab fa-whatsapp fa-lg"></i>Hubungi Kami
                         </a>
                     </p>
                 </div>
@@ -226,7 +264,7 @@
                     <p>
                         <a href="https://wa.me/6281234567890?text=Halo%20Belmontransport,%20saya%20ingin%20bertanya."
                             class="btn btn-whatsapp-nav">
-                            <i class="fab fa-whatsapp me-2"></i>Hubungi Kami
+                            <i class="fab fa-whatsapp fa-lg"></i>Hubungi Kami
                         </a>
                     </p>
                 </div>
@@ -268,7 +306,7 @@
                                 Jam</small></p>
                         <hr>
                         <a href="#" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp me-2"></i>Pesan
+                            <i class="fab fa-whatsapp fa-lg"></i>Pesan
                         </a>
                     </div>
                 </div>
@@ -286,7 +324,7 @@
                                 Jam</small></p>
                         <hr>
                         <a href="#" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp me-2"></i>Pesan
+                            <i class="fab fa-whatsapp fa-lg"></i>Pesan
                         </a>
                     </div>
                 </div>
@@ -304,7 +342,7 @@
                                 Jam</small></p>
                         <hr>
                         <a href="#" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp me-2"></i>Pesan
+                            <i class="fab fa-whatsapp fa-lg"></i>Pesan
                         </a>
                     </div>
                 </div>
@@ -322,7 +360,7 @@
                                 Jam</small></p>
                         <hr>
                         <a href="#" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp me-2"></i>Pesan
+                            <i class="fab fa-whatsapp fa-lg"></i>Pesan
                         </a>
                     </div>
                 </div>
@@ -353,7 +391,7 @@
                         </ul>
                         <div class="text-center border-top pt-3">
                             <a href="#" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp me-2"></i>Pesan
+                                <i class="fab fa-whatsapp fa-lg"></i>Pesan
                             </a>
                             <p class="mt-2 mb-0 small text-muted">Include Driver & BBM</p>
                             <p class="fw-bold text-primary mb-0">Rp. 600.000 <small class="text-muted">/12 Jam</small>
@@ -381,7 +419,7 @@
                         </ul>
                         <div class="text-center border-top pt-3">
                             <a href="#" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp me-2"></i>Pesan
+                                <i class="fab fa-whatsapp fa-lg"></i>Pesan
                             </a>
                             <p class="mt-2 mb-0 small text-muted">Include Driver & BBM</p>
                             <p class="fw-bold text-primary mb-0">Rp. 600.000 <small class="text-muted">/12 Jam</small>
@@ -409,7 +447,7 @@
                         </ul>
                         <div class="text-center border-top pt-3">
                             <a href="#" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp me-2"></i>Pesan
+                                <i class="fab fa-whatsapp fa-lg"></i>Pesan
                             </a>
                             <p class="mt-2 mb-0 small text-muted">Include Driver & BBM</p>
                             <p class="fw-bold text-primary mb-0">Rp. 600.000 <small class="text-muted">/12 Jam</small>
@@ -437,7 +475,7 @@
                         </ul>
                         <div class="text-center border-top pt-3">
                             <a href="#" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp me-2"></i>Pesan
+                                <i class="fab fa-whatsapp fa-lg"></i>Pesan
                             </a>
                             <p class="mt-2 mb-0 small text-muted">Include Driver & BBM</p>
                             <p class="fw-bold text-primary mb-0">Rp. 600.000 <small class="text-muted">/12 Jam</small>
@@ -450,12 +488,75 @@
         </div>
     </div>
 
+    <div class="container py-5">
+        <h2 class="text-center mb-4 fw-bold text-primary">Tiktok</h2>
+        <div class="row g-4">
+
+            <div class="col-md-12">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belmontrans" data-unique-id="belmontrans"
+                    data-embed-type="creator" style="max-width: 780px; min-width: 288px;">
+                    <section> <a target="_blank"
+                            href="https://www.tiktok.com/@belmontrans?refer=creator_embed">@belmontrans</a>
+                    </section>
+                </blockquote>
+
+            </div>
+        </div>
+    </div>
+
+
+    <section class="text-center py-5"
+        style="background: rgba(0,0,0,0.4) url('admin/uploads/dashboard.jpg') center/cover no-repeat; color: white;">
+        <div class="container">
+            <h2 class="fw-bold mb-4">Pesan & Hubungi Kami Sekarang!</h2>
+            <a href="https://wa.me/628112735426" target="_blank" class="footer-btn">
+                <i class="fa-brands fa-whatsapp me-2"></i>Hubungi Kami
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-md-4 footer-logo mb-4 mb-md-0">
+                    <img src="logo-belmon-asli.png" alt="Logo Davi">
+                </div>
+
+                <div class="col-md-4 mb-4 mb-md-0 text-md-start text-center">
+                    <h6><i class="fa-solid fa-location-dot me-2"></i>Alamat</h6>
+                    <p class="mb-0">Jl. Palagan Tentara Pelajar No.113C, Sumberan, Sariharjo, Kec. Ngaglik, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55581</p>
+                </div>
+
+                <div class="col-md-4 text-md-start text-center">
+                    <h6><i class="fa-solid fa-phone me-2"></i>Kontak</h6>
+                    <p class="mb-0">Whatsapp: 08112735426<br>
+                        Email: davitourjogja@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="mb-0">
+                    Copyright © 2026 Belmontransport Yogyakarta. All rights reserved.
+                    Developed with <i class="fa-solid fa-heart text-danger mx-1"></i> by <a href="https://www.tiktok.com/@bayu_bayu_">@bayu_bayu_</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script async src="https://www.tiktok.com/embed.js"></script>
+
     <a href="https://wa.me/6281234567890?text=Halo%20Belmontransport,%20saya%20ingin%20bertanya." class="whatsapp-float"
         target="_blank" aria-label="Hubungi kami di WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-whatsapp fa-xl"></i>
     </a>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({
