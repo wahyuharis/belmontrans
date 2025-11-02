@@ -62,7 +62,7 @@ $autoload['packages'] = array();
 if (is_cli()) {
     $autoload['libraries'] = array('database');
 } else {
-    $autoload['libraries'] = array('database', 'session', "Template", "Auth");
+    $autoload['libraries'] = array('database');
 }
 /*
 | -------------------------------------------------------------------
