@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Belmontransport</title>
+    <!-- Bootstrap 5 -->
+    <link href="<?=base_url("node_modules/bootstrap/dist/css/bootstrap.min.css")?>" rel="stylesheet">
+    <!-- Font Awesome (ikon) -->
+    <link href="<?=base_url('node_modules/@fortawesome/fontawesome-free/css/all.min.css')?>" rel="stylesheet">
+    <link rel="stylesheet" href="<?=base_url('node_modules/aos/dist/aos.css')?>">
+    <style>
+        /* Warna custom untuk top bar */
+        .top-bar {
+            background-color: rgba(52, 152, 219, 1.0);
+        }
+
+        .top-bar a {
+            text-decoration: none;
+        }
+
+        .car-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .car-card img {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .car-card .price {
+            color: rgba(52, 152, 219, 1.0);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .btn-whatsapp {
+            background-color: rgba(52, 152, 219, 1.0);
+            color: #fff;
+            border-radius: 25px;
+            font-weight: 500;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: rgba(41, 128, 185, 1.0);
+            color: #fff;
+        }
+
+        .text-primary {
+            color: rgba(52, 152, 219, 1.0) !important;
+        }
+
+        .navbar {
+            height: 100px;
+        }
+
+        .wisata-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .wisata-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .wisata-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .btn-whatsapp-nav {
+            background-color: rgba(52, 152, 219, 1.0);
+            color: #fff;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        .btn-whatsapp-nav:hover {
+            background-color: rgba(41, 128, 185, 1.0);
+            color: #fff;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #25D366;
+            /* Warna hijau WhatsApp */
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 28px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s ease;
+            padding-top: 6px;
+        }
+
+        .whatsapp-float i {
+            line-height: 60px;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20ba5a;
+            /* Warna hijau sedikit lebih gelap */
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        .navbar-collapse {
+            background-color: white;
+            border-top: 1px solid #ddd;
+            /* opsional: pemisah */
+            padding: 10px;
+        }
+
+        .carousel-item {
+            background-color: #878787 !important;
+        }
+
+        .carousel-item img {
+            opacity: 0.7;
+            width: 100%;
+            height: 500px;
+        }
+
+
+
+        footer {
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            padding-top: 60px;
+            border-top: 1px solid #ccc;
+        }
+
+        .footer-logo img {
+            height: 80px;
+        }
+
+        .footer-btn {
+            background-color: #f1c40f;
+            color: #000;
+            border-radius: 50px;
+            font-weight: 600;
+            padding: 12px 30px;
+            text-decoration: none;
+        }
+
+        .footer-btn:hover {
+            background-color: #e0b90e;
+            color: #000;
+        }
+
+        .footer-bottom {
+            font-size: 14px;
+            border-top: 1px solid #ccc;
+            padding: 15px 0;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar text-white py-2 small">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <i class="fa-solid fa-phone me-2"></i> +62 812-3456-7890
+                <span class="mx-3">|</span>
+                <i class="fa-solid fa-envelope me-2"></i> info@mywebsite.com
+            </div>
+            <div>
+                <a href="#" class="text-white me-2"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="logo-belmon2.png" alt="Belmontransport" height="60">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link text-primary" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Rental Mobil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Paket Wisata</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+                </ul>
+
+                <!-- Tombol WhatsApp -->
+                <a href="https://wa.me/6281234567890?text=Halo%20Belmontransport,%20saya%20ingin%20bertanya."
+                    target="_blank" class="btn btn-whatsapp-nav ms-lg-3 mt-2 mt-lg-0">
+                    <i class="fab fa-whatsapp fa-lg"></i>Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <?php echo $content ?>
+
+
+
+    <div class="container py-5">
+        <h2 class="text-center mb-4 fw-bold text-primary">Tiktok</h2>
+        <div class="row g-4">
+
+            <div class="col-md-12">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@belmontrans" data-unique-id="belmontrans"
+                    data-embed-type="creator" style="max-width: 780px; min-width: 288px;">
+                    <section> <a target="_blank"
+                            href="https://www.tiktok.com/@belmontrans?refer=creator_embed">@belmontrans</a>
+                    </section>
+                </blockquote>
+
+            </div>
+        </div>
+    </div>
+
+
+    <section class="text-center py-5"
+        style="background: rgba(0,0,0,0.4) url('admin/uploads/dashboard.jpg') center/cover no-repeat; color: white;">
+        <div class="container">
+            <h2 class="fw-bold mb-4">Pesan & Hubungi Kami Sekarang!</h2>
+            <a href="https://wa.me/628112735426" target="_blank" class="footer-btn">
+                <i class="fa-brands fa-whatsapp me-2"></i>Hubungi Kami
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-md-4 footer-logo mb-4 mb-md-0">
+                    <img src="logo-belmon-asli.png" alt="Logo Davi">
+                </div>
+
+                <div class="col-md-4 mb-4 mb-md-0 text-md-start text-center">
+                    <h6><i class="fa-solid fa-location-dot me-2"></i>Alamat</h6>
+                    <p class="mb-0">Jl. Palagan Tentara Pelajar No.113C, Sumberan, Sariharjo, Kec. Ngaglik, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55581</p>
+                </div>
+
+                <div class="col-md-4 text-md-start text-center">
+                    <h6><i class="fa-solid fa-phone me-2"></i>Kontak</h6>
+                    <p class="mb-0">Whatsapp: +6281226464209<br>
+                        Email: belmontransportjogja@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="mb-0">
+                    Copyright © 2026 Belmontransport Yogyakarta. All rights reserved.
+                    Developed with <i class="fa-solid fa-heart text-danger mx-1"></i> by <a href="https://www.tiktok.com/@bayu_bayu_">@bayu_bayu_</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script async src="https://www.tiktok.com/embed.js"></script>
+
+    <a href="https://wa.me/6281234567890?text=Halo%20Belmontransport,%20saya%20ingin%20bertanya." class="whatsapp-float"
+        target="_blank" aria-label="Hubungi kami di WhatsApp">
+        <i class="fab fa-whatsapp fa-xl"></i>
+    </a>
+    <!-- Bootstrap JS -->
+    <script src="<?=base_url('node_modules/jquery/dist/jquery.min.js')?>"></script>
+    <script src="<?=base_url('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')?>"></script>
+    <script src="<?=base_url('node_modules/@fortawesome/fontawesome-free/js/all.min.js')?>"></script>
+    <script src="<?=base_url('node_modules/aos/dist/aos.js')?>"></script>
+    <script>
+        AOS.init({
+            duration: 800, // durasi animasi
+            once: true // animasi hanya sekali
+        });
+    </script>
+</body>
+
+</html>
