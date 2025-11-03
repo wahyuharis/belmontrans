@@ -7,7 +7,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="<?=base_url()?>/admin/uploads/<?= get_baner('home_carousel_rental_mobil', 'foto') ?>" class="d-block w-100" alt="Slide 1">
+                <img src="<?= base_url() ?>/admin/uploads/<?= get_baner('home_carousel_rental_mobil', 'foto') ?>" class="d-block w-100" alt="Slide 1">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="fw-bold"><?= get_baner('home_carousel_rental_mobil', 'title') ?></h2>
                     <p><?= get_baner('home_carousel_rental_mobil', 'caption') ?></p>
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="<?=base_url()?>/admin/uploads/<?= get_baner('home_carousel_paket_wisata', 'foto') ?>" class="d-block w-100" alt="Slide 2">
+                <img src="<?= base_url() ?>/admin/uploads/<?= get_baner('home_carousel_paket_wisata', 'foto') ?>" class="d-block w-100" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="fw-bold"><?= get_baner('home_carousel_paket_wisata', 'title') ?></h2>
                     <p><?= get_baner('home_carousel_paket_wisata', 'caption') ?></p>
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="<?=base_url()?>/admin/uploads/<?= get_baner('home_carousel_hubungi_kami', 'foto') ?>" class="d-block w-100" alt="Slide 3">
+                <img src="<?= base_url() ?>/admin/uploads/<?= get_baner('home_carousel_hubungi_kami', 'foto') ?>" class="d-block w-100" alt="Slide 3">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="fw-bold"><?= get_baner('home_carousel_hubungi_kami', 'title') ?></h2>
                     <p><?= get_baner('home_carousel_hubungi_kami', 'caption') ?></p>
@@ -67,77 +67,27 @@
         <h2 class="text-center mb-4 fw-bold text-primary" data-aos="fade-up">Rental Mobil</h2>
         <div class="row g-4">
 
-            <!-- Card 1 -->
-            <div class="col-md-3" data-aos="fade-up">
-                <div class="card car-card">
-                    <img src="grand-avanza-18.jpeg.webp" class="card-img-top" alt="Grand Avanza">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold">Grand Avanza</h5>
-                        <p class="mb-1">Lepas Kunci, Manual</p>
-                        <p class="price mb-0">Rp. 350.000 <small class="text-muted">/24 Jam</small></p>
-                        <p>Include Driver & BBM<br><span class="price">Rp. 600.000</span> <small class="text-muted">/12
-                                Jam</small></p>
-                        <hr>
-                        <a href="#" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp fa-lg"></i>Pesan
-                        </a>
+            <?php foreach ($kendaraan as $row) { ?>
+                <!-- Card 1 -->
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="card car-card">
+                        <img src="<?= base_url('admin/uploads/' . $row['foto']) ?>" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold"><?= $row['nama_kendaraan'] ?></h5>
+                            <!-- <p class="mb-1">Lepas Kunci, Manual</p> -->
+                            <!-- <p class="price mb-0">Rp. 350.000 <small class="text-muted">/24 Jam</small></p> -->
+                            <p>Include Driver & BBM
+                                <br>
+                                <span class="price">Rp <?= format_currency($row['with_driver']) ?></span>/<small class="text-muted">Day</small>
+                            </p>
+                            <hr>
+                            <a href="https://wa.me/<?= get_kontak('whatsapp_url', 'alamat_kontak') ?>?text=<?= urlencode('Halo Belmon Saya Mau Booking ' . $row['nama_kendaraan']) ?>" class="btn btn-whatsapp">
+                                <i class="fab fa-whatsapp fa-lg"></i>Pesan
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="col-md-3" data-aos="fade-up">
-                <div class="card car-card">
-                    <img src="grand-avanza-18.jpeg.webp" class="card-img-top" alt="New Brio">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold">New Brio</h5>
-                        <p class="mb-1">Lepas Kunci, Matic</p>
-                        <p class="price mb-0">Rp. 350.000 <small class="text-muted">/24 Jam</small></p>
-                        <p>Include Driver & BBM<br><span class="price">Rp. 550.000</span> <small class="text-muted">/12
-                                Jam</small></p>
-                        <hr>
-                        <a href="#" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp fa-lg"></i>Pesan
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="col-md-3" data-aos="fade-up">
-                <div class="card car-card">
-                    <img src="grand-avanza-18.jpeg.webp" class="card-img-top" alt="Honda Jazz">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold">Honda Jazz</h5>
-                        <p class="mb-1">Lepas Kunci, Matic</p>
-                        <p class="price mb-0">Rp. 450.000 <small class="text-muted">/24 Jam</small></p>
-                        <p>Include Driver & BBM<br><span class="price">Rp. 600.000</span> <small class="text-muted">/12
-                                Jam</small></p>
-                        <hr>
-                        <a href="#" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp fa-lg"></i>Pesan
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="col-md-3" data-aos="fade-up">
-                <div class="card car-card">
-                    <img src="grand-avanza-18.jpeg.webp" class="card-img-top" alt="Honda Jazz">
-                    <div class="card-body text-center">
-                        <h5 class="card-title fw-bold">Honda Jazz</h5>
-                        <p class="mb-1">Lepas Kunci, Matic</p>
-                        <p class="price mb-0">Rp. 450.000 <small class="text-muted">/24 Jam</small></p>
-                        <p>Include Driver & BBM<br><span class="price">Rp. 600.000</span> <small class="text-muted">/12
-                                Jam</small></p>
-                        <hr>
-                        <a href="#" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp fa-lg"></i>Pesan
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <?php } ?>
 
         </div>
     </div>
