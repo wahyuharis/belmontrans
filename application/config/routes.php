@@ -52,6 +52,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = 'Home';
 $route['404_override'] = 'zpage_404';
+$route['rental-mobil'] = 'rental';
+$route['paket-wisata'] = 'paket_wisata';
+
 
 // $route['default_controller'] = 'welcome';
 // $route['404_override'] = '';

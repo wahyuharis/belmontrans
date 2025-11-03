@@ -1,0 +1,190 @@
+/* Warna custom untuk top bar */
+.top-bar {
+    background-color: rgba(52, 152, 219, 1.0);
+}
+
+.top-bar a {
+    text-decoration: none;
+}
+
+.car-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.car-card img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.car-card .price {
+    color: rgba(52, 152, 219, 1.0);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.btn-whatsapp {
+    background-color: rgba(52, 152, 219, 1.0);
+    color: #fff;
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+.btn-whatsapp:hover {
+    background-color: rgba(41, 128, 185, 1.0);
+    color: #fff;
+}
+
+.text-primary {
+    color: rgba(52, 152, 219, 1.0) !important;
+}
+
+.navbar {
+    height: 100px;
+}
+
+.wisata-card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.wisata-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.wisata-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.btn-whatsapp-nav {
+    background-color: rgba(52, 152, 219, 1.0);
+    color: #fff;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.btn-whatsapp-nav:hover {
+    background-color: rgba(41, 128, 185, 1.0);
+    color: #fff;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #25D366;
+    /* Warna hijau WhatsApp */
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: all 0.3s ease;
+    padding-top: 6px;
+}
+
+.whatsapp-float i {
+    line-height: 60px;
+}
+
+.whatsapp-float:hover {
+    background-color: #20ba5a;
+    /* Warna hijau sedikit lebih gelap */
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.navbar-collapse {
+    background-color: white;
+    border-top: 1px solid #ddd;
+    /* opsional: pemisah */
+    padding: 10px;
+}
+
+.carousel-item {
+    background-color: #878787 !important;
+}
+
+.carousel-item img {
+    opacity: 0.7;
+    width: 100%;
+    height: 500px;
+}
+
+
+
+footer {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    padding-top: 60px;
+    border-top: 1px solid #ccc;
+}
+
+.footer-logo img {
+    height: 80px;
+}
+
+.footer-btn {
+    background-color: #f1c40f;
+    color: #000;
+    border-radius: 50px;
+    font-weight: 600;
+    padding: 12px 30px;
+    text-decoration: none;
+}
+
+.footer-btn:hover {
+    background-color: #e0b90e;
+    color: #000;
+}
+
+.footer-bottom {
+    font-size: 14px;
+    border-top: 1px solid #ccc;
+    padding: 15px 0;
+    color: #555;
+}
+
+.hero-parallax {
+
+    /* ganti dengan gambarmu */
+    background-attachment: fixed;
+    /* efek parallax */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    /* tinggi area */
+    position: relative;
+}
+
+/* Tambahkan overlay gelap agar teks lebih jelas */
+.hero-parallax::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-parallax .container {
+    position: relative;
+    z-index: 2;
+}

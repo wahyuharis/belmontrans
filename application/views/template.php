@@ -6,173 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Belmontransport</title>
     <!-- Bootstrap 5 -->
-    <link href="<?=base_url("node_modules/bootstrap/dist/css/bootstrap.min.css")?>" rel="stylesheet">
+    <link href="<?= base_url("node_modules/bootstrap/dist/css/bootstrap.min.css") ?>" rel="stylesheet">
     <!-- Font Awesome (ikon) -->
-    <link href="<?=base_url('node_modules/@fortawesome/fontawesome-free/css/all.min.css')?>" rel="stylesheet">
-    <link rel="stylesheet" href="<?=base_url('node_modules/aos/dist/aos.css')?>">
-    <style>
-        /* Warna custom untuk top bar */
-        .top-bar {
-            background-color: rgba(52, 152, 219, 1.0);
-        }
-
-        .top-bar a {
-            text-decoration: none;
-        }
-
-        .car-card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .car-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        .car-card img {
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-        }
-
-        .car-card .price {
-            color: rgba(52, 152, 219, 1.0);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .btn-whatsapp {
-            background-color: rgba(52, 152, 219, 1.0);
-            color: #fff;
-            border-radius: 25px;
-            font-weight: 500;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: rgba(41, 128, 185, 1.0);
-            color: #fff;
-        }
-
-        .text-primary {
-            color: rgba(52, 152, 219, 1.0) !important;
-        }
-
-        .navbar {
-            height: 100px;
-        }
-
-        .wisata-card {
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .wisata-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .wisata-card img {
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .btn-whatsapp-nav {
-            background-color: rgba(52, 152, 219, 1.0);
-            color: #fff;
-            border-radius: 25px;
-            font-weight: 500;
-            transition: 0.3s ease;
-        }
-
-        .btn-whatsapp-nav:hover {
-            background-color: rgba(41, 128, 185, 1.0);
-            color: #fff;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: #25D366;
-            /* Warna hijau WhatsApp */
-            color: #fff;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 28px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            z-index: 999;
-            transition: all 0.3s ease;
-            padding-top: 6px;
-        }
-
-        .whatsapp-float i {
-            line-height: 60px;
-        }
-
-        .whatsapp-float:hover {
-            background-color: #20ba5a;
-            /* Warna hijau sedikit lebih gelap */
-            transform: scale(1.1);
-            color: #fff;
-        }
-
-        .navbar-collapse {
-            background-color: white;
-            border-top: 1px solid #ddd;
-            /* opsional: pemisah */
-            padding: 10px;
-        }
-
-        .carousel-item {
-            background-color: #878787 !important;
-        }
-
-        .carousel-item img {
-            opacity: 0.7;
-            width: 100%;
-            height: 500px;
-        }
-
-
-
-        footer {
-            background-color: #fff;
-            color: #333;
-            text-align: center;
-            padding-top: 60px;
-            border-top: 1px solid #ccc;
-        }
-
-        .footer-logo img {
-            height: 80px;
-        }
-
-        .footer-btn {
-            background-color: #f1c40f;
-            color: #000;
-            border-radius: 50px;
-            font-weight: 600;
-            padding: 12px 30px;
-            text-decoration: none;
-        }
-
-        .footer-btn:hover {
-            background-color: #e0b90e;
-            color: #000;
-        }
-
-        .footer-bottom {
-            font-size: 14px;
-            border-top: 1px solid #ccc;
-            padding: 15px 0;
-            color: #555;
-        }
-    </style>
+    <link href="<?= base_url('node_modules/@fortawesome/fontawesome-free/css/all.min.css') ?>" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url('node_modules/aos/dist/aos.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/custom.css') ?>">
 </head>
 
 <body>
@@ -181,14 +19,14 @@
     <div class="top-bar text-white py-2 small">
         <div class="container d-flex justify-content-between align-items-center">
             <div>
-                <i class="fa-solid fa-phone me-2"></i> +62 812-3456-7890
+                <i class="fa-solid fa-phone me-2"></i> <?= get_kontak('telphone', 'alamat_kontak') ?>
                 <span class="mx-3">|</span>
-                <i class="fa-solid fa-envelope me-2"></i> info@mywebsite.com
+                <i class="fa-solid fa-envelope me-2"></i> <?= get_kontak('email', 'alamat_kontak') ?>
             </div>
             <div>
-                <a href="#" class="text-white me-2"><i class="fab fa-tiktok"></i></a>
-                <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-white"><i class="fab fa-whatsapp"></i></a>
+                <a href="<?= get_kontak('tiktok', 'url') ?>" class="text-white me-2"><i class="fab fa-tiktok"></i></a>
+                <a href="<?= get_kontak('instagram', 'url') ?>" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                <a href="<?= get_kontak('whatsapp', 'url') ?>" class="text-white"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
@@ -205,17 +43,54 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <?php
+            $segment1 = segment_uri(1);
+            $segment2 = segment_uri(2);
+            $segment3 = segment_uri(3);
+            ?>
+
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link text-primary" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Profil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Rental Mobil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Paket Wisata</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+                    <?php
+                    $active = '';
+                    if ($segment1 == 'home') {
+                        $active = ' text-primary ';
+                    }
+                    ?>
+                    <li class="nav-item"><a class="nav-link <?= $active ?>" href="<?= base_url('home') ?>">Home</a></li>
+                    <?php
+                    $active = '';
+                    if ($segment1 == 'profile') {
+                        $active = ' text-primary ';
+                    }
+                    ?>
+                    <li class="nav-item"><a class="nav-link <?= $active ?>" href="<?= base_url('profile') ?>">Profil</a></li>
+                    <?php
+                    $active = '';
+                    if ($segment1 == 'rental-mobil') {
+                        $active = ' text-primary ';
+                    }
+                    ?>
+                    <li class="nav-item"><a class="nav-link <?= $active ?>" href="<?= base_url('rental-mobil') ?>">Rental Mobil</a></li>
+                    <?php
+                    $active = '';
+                    if ($segment1 == 'paket-wisata') {
+                        $active = ' text-primary ';
+                    }
+                    ?>
+                    <li class="nav-item"><a class="nav-link <?= $active ?>" href="<?= base_url('paket-wisata') ?>">Paket Wisata</a></li>
+                    <?php
+                    $active = '';
+                    if ($segment1 == 'kontak') {
+                        $active = ' text-primary ';
+                    }
+                    ?>
+                    <li class="nav-item"><a class="nav-link <?= $active ?>" href="<?= base_url('kontak') ?>">Kontak</a></li>
                 </ul>
 
                 <!-- Tombol WhatsApp -->
-                <a href="https://wa.me/6281234567890?text=Halo%20Belmontransport,%20saya%20ingin%20bertanya."
+                <a href="<?= get_kontak('whatsapp', 'url') ?>"
                     target="_blank" class="btn btn-whatsapp-nav ms-lg-3 mt-2 mt-lg-0">
                     <i class="fab fa-whatsapp fa-lg"></i>Hubungi Kami
                 </a>
@@ -251,7 +126,7 @@
         style="background: rgba(0,0,0,0.4) url('admin/uploads/dashboard.jpg') center/cover no-repeat; color: white;">
         <div class="container">
             <h2 class="fw-bold mb-4">Pesan & Hubungi Kami Sekarang!</h2>
-            <a href="https://wa.me/628112735426" target="_blank" class="footer-btn">
+            <a href="<?= get_kontak('whatsapp', 'url') ?>" target="_blank" class="footer-btn">
                 <i class="fa-brands fa-whatsapp me-2"></i>Hubungi Kami
             </a>
         </div>
@@ -292,15 +167,15 @@
 
     <script async src="https://www.tiktok.com/embed.js"></script>
 
-    <a href="https://wa.me/6281234567890?text=Halo%20Belmontransport,%20saya%20ingin%20bertanya." class="whatsapp-float"
+    <a href="<?= get_kontak('whatsapp', 'url') ?>" class="whatsapp-float"
         target="_blank" aria-label="Hubungi kami di WhatsApp">
         <i class="fab fa-whatsapp fa-xl"></i>
     </a>
     <!-- Bootstrap JS -->
-    <script src="<?=base_url('node_modules/jquery/dist/jquery.min.js')?>"></script>
-    <script src="<?=base_url('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')?>"></script>
-    <script src="<?=base_url('node_modules/@fortawesome/fontawesome-free/js/all.min.js')?>"></script>
-    <script src="<?=base_url('node_modules/aos/dist/aos.js')?>"></script>
+    <script src="<?= base_url('node_modules/jquery/dist/jquery.min.js') ?>"></script>
+    <script src="<?= base_url('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= base_url('node_modules/@fortawesome/fontawesome-free/js/all.min.js') ?>"></script>
+    <script src="<?= base_url('node_modules/aos/dist/aos.js') ?>"></script>
     <script>
         AOS.init({
             duration: 800, // durasi animasi

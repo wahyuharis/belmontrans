@@ -1,6 +1,6 @@
 <?php
 
-class Home extends CI_Controller
+class Profile extends CI_Controller
 {
 
     function __construct()
@@ -11,7 +11,7 @@ class Home extends CI_Controller
     function index()
     {
 
-        $data['content'] = load_view_html('home');
+        $data['content'] = load_view_html('profile');
 
         $this->load->view('template', $data);
     }
