@@ -188,3 +188,12 @@ footer {
     position: relative;
     z-index: 2;
 }
+.btn-primary {
+  background-color: rgb(52, 152, 219) !important;
+  border-color: rgb(52, 152, 219) !important;
+}
+
+.btn-primary:hover {
+  background-color: rgb(41, 128, 185) !important; /* versi lebih gelap untuk efek hover */
+  border-color: rgb(41, 128, 185) !important;
+}

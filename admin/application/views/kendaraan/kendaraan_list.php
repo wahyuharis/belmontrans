@@ -24,6 +24,10 @@
 <script>
     $(document).ready(function() {
         var table = $('#dtt_tables').DataTable({
+            "lengthMenu": [
+                [100, 500, 1000, -1],
+                [100, 500, 1000, "All"]
+            ],
             "columnDefs": [{
                     "targets": 0,
                     "visible": false,

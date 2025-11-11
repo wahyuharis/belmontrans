@@ -8,7 +8,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="<?= base_url() ?>/admin/uploads/<?= get_baner('home_carousel_rental_mobil', 'foto') ?>" class="d-block w-100" alt="Slide 1">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption">
                     <h2 class="fw-bold"><?= get_baner('home_carousel_rental_mobil', 'title') ?></h2>
                     <p><?= get_baner('home_carousel_rental_mobil', 'caption') ?></p>
                     <p>
@@ -20,7 +20,7 @@
             </div>
             <div class="carousel-item">
                 <img src="<?= base_url() ?>/admin/uploads/<?= get_baner('home_carousel_paket_wisata', 'foto') ?>" class="d-block w-100" alt="Slide 2">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption">
                     <h2 class="fw-bold"><?= get_baner('home_carousel_paket_wisata', 'title') ?></h2>
                     <p><?= get_baner('home_carousel_paket_wisata', 'caption') ?></p>
                     <p>
@@ -32,7 +32,7 @@
             </div>
             <div class="carousel-item">
                 <img src="<?= base_url() ?>/admin/uploads/<?= get_baner('home_carousel_hubungi_kami', 'foto') ?>" class="d-block w-100" alt="Slide 3">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption">
                     <h2 class="fw-bold"><?= get_baner('home_carousel_hubungi_kami', 'title') ?></h2>
                     <p><?= get_baner('home_carousel_hubungi_kami', 'caption') ?></p>
                     <p>
@@ -66,7 +66,6 @@
     <div class="container py-5">
         <h2 class="text-center mb-4 fw-bold text-primary" data-aos="fade-up">Rental Mobil</h2>
         <div class="row g-4">
-
             <?php foreach ($kendaraan as $row) { ?>
                 <!-- Card 1 -->
                 <div class="col-md-3" data-aos="fade-up">
@@ -88,7 +87,13 @@
                     </div>
                 </div>
             <?php } ?>
-
+        </div>
+        <div class="row g-4">
+            <div class="col-md-12" >
+                <div class="d-grid gap-2">
+                    <a class="btn btn-primary" href="<?= base_url('rental-mobil') ?>">Selengkapnya >> </a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -96,117 +101,43 @@
         <h2 class="text-center mb-4 fw-bold text-primary">Paket Wisata</h2>
         <div class="row g-4">
 
-            <div class="col-md-3" data-aos="fade-up">
-                <div class="card wisata-card border-0 shadow-sm h-100">
-                    <div class="position-relative">
-                        <img src="paket-wisata-1-69.jpeg.webp" class="card-img-top rounded-top" alt="Paket Wisata 1">
-                        <span
-                            class="badge bg-warning text-dark position-absolute top-0 end-0 m-2 px-3 py-2 rounded-pill fw-semibold">
-                            3 DESTINASI
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="fw-bold mb-3">Paket Wisata 1</h5>
-                        <ul class="list-unstyled mb-4">
-                            <li><i class="fa-solid fa-check text-warning me-2"></i>Borobudur</li>
-                            <li><i class="fa-solid fa-check text-warning me-2"></i>Merapi Lava Tour</li>
-                            <li><i class="fa-solid fa-check text-warning me-2"></i>Prambanan Tebing Breksi</li>
-                        </ul>
-                        <div class="text-center border-top pt-3">
-                            <a href="#" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp fa-lg"></i>Pesan
-                            </a>
-                            <p class="mt-2 mb-0 small text-muted">Include Driver & BBM</p>
-                            <p class="fw-bold text-primary mb-0">Rp. 600.000 <small class="text-muted">/12 Jam</small>
-                            </p>
+            <?php foreach ($paket_wisata as $row) { ?>
+                <?php $destinasi = json_decode($row['destinasi'], true) ?>
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="card wisata-card border-0 shadow-sm h-100">
+                        <div class="position-relative">
+                            <img src="<?= base_url('admin/uploads/' . $row['foto']) ?>" class="card-img-top rounded-top">
+                            <span
+                                class="badge bg-warning text-dark position-absolute top-0 end-0 m-2 px-3 py-2 rounded-pill fw-semibold">
+                                <?= count($destinasi) ?> DESTINASI
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="fw-bold mb-3"><?= $row['nama_wisata'] ?></h5>
+                            <ul class="list-unstyled mb-4">
+                                <?php foreach ($destinasi as $row2) { ?>
+                                    <li><i class="fa-solid fa-check text-warning me-2"></i><?= $row2['nama_destinasi'] ?></li>
+                                <?php } ?>
+                            </ul>
+                            <div class="text-center border-top pt-3">
+                                <a href="https://wa.me/<?= get_kontak('whatsapp_url', 'alamat_kontak') ?>?text=<?= urlencode('Halo Belmon Saya Mau Booking Wisata ' . $row['nama_wisata']) ?>" class="btn btn-whatsapp">
+                                    <i class="fab fa-whatsapp fa-lg"></i>Pesan
+                                </a>
+                                <p class="mt-2 mb-0 small text-muted">Include Driver & BBM</p>
+                                <p class="fw-bold text-primary mb-0">Rp. 600.000 <small class="text-muted">/12 Jam</small>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php } ?>
 
-            <div class="col-md-3" data-aos="fade-up">
-                <div class="card wisata-card border-0 shadow-sm h-100">
-                    <div class="position-relative">
-                        <img src="paket-wisata-1-69.jpeg.webp" class="card-img-top rounded-top" alt="Paket Wisata 1">
-                        <span
-                            class="badge bg-warning text-dark position-absolute top-0 end-0 m-2 px-3 py-2 rounded-pill fw-semibold">
-                            3 DESTINASI
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="fw-bold mb-3">Paket Wisata 1</h5>
-                        <ul class="list-unstyled mb-4">
-                            <li><i class="fa-solid fa-check text-warning me-2"></i>Borobudur</li>
-                            <li><i class="fa-solid fa-check text-warning me-2"></i>Merapi Lava Tour</li>
-                            <li><i class="fa-solid fa-check text-warning me-2"></i>Prambanan Tebing Breksi</li>
-                        </ul>
-                        <div class="text-center border-top pt-3">
-                            <a href="#" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp fa-lg"></i>Pesan
-                            </a>
-                            <p class="mt-2 mb-0 small text-muted">Include Driver & BBM</p>
-                            <p class="fw-bold text-primary mb-0">Rp. 600.000 <small class="text-muted">/12 Jam</small>
-                            </p>
-                        </div>
-                    </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-12" >
+                <div class="d-grid gap-2">
+                    <a class="btn btn-primary" href="<?= base_url('paket-wisata') ?>">Selengkapnya >> </a>
                 </div>
             </div>
-
-            <div class="col-md-3" data-aos="fade-up">
-                <div class="card wisata-card border-0 shadow-sm h-100">
-                    <div class="position-relative">
-                        <img src="paket-wisata-1-69.jpeg.webp" class="card-img-top rounded-top" alt="Paket Wisata 1">
-                        <span
-                            class="badge bg-warning text-dark position-absolute top-0 end-0 m-2 px-3 py-2 rounded-pill fw-semibold">
-                            3 DESTINASI
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="fw-bold mb-3">Paket Wisata 1</h5>
-                        <ul class="list-unstyled mb-4">
-                            <li><i class="fa-solid fa-check text-warning me-2"></i>Borobudur</li>
-                            <li><i class="fa-solid fa-check text-warning me-2"></i>Merapi Lava Tour</li>
-                            <li><i class="fa-solid fa-check text-warning me-2"></i>Prambanan Tebing Breksi</li>
-                        </ul>
-                        <div class="text-center border-top pt-3">
-                            <a href="#" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp fa-lg"></i>Pesan
-                            </a>
-                            <p class="mt-2 mb-0 small text-muted">Include Driver & BBM</p>
-                            <p class="fw-bold text-primary mb-0">Rp. 600.000 <small class="text-muted">/12 Jam</small>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3" data-aos="fade-up">
-                <div class="card wisata-card border-0 shadow-sm h-100">
-                    <div class="position-relative">
-                        <img src="paket-wisata-1-69.jpeg.webp" class="card-img-top rounded-top" alt="Paket Wisata 1">
-                        <span
-                            class="badge bg-warning text-dark position-absolute top-0 end-0 m-2 px-3 py-2 rounded-pill fw-semibold">
-                            3 DESTINASI
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="fw-bold mb-3">Paket Wisata 1</h5>
-                        <ul class="list-unstyled mb-4">
-                            <li><i class="fa-solid fa-check text-warning me-2"></i>Borobudur</li>
-                            <li><i class="fa-solid fa-check text-warning me-2"></i>Merapi Lava Tour</li>
-                            <li><i class="fa-solid fa-check text-warning me-2"></i>Prambanan Tebing Breksi</li>
-                        </ul>
-                        <div class="text-center border-top pt-3">
-                            <a href="#" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp fa-lg"></i>Pesan
-                            </a>
-                            <p class="mt-2 mb-0 small text-muted">Include Driver & BBM</p>
-                            <p class="fw-bold text-primary mb-0">Rp. 600.000 <small class="text-muted">/12 Jam</small>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>

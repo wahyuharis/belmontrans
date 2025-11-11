@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Belmontransport</title>
+    <link rel="icon" type="image/png" href="<?=base_url('logo-web-sm.png')?>" />
     <!-- Bootstrap 5 -->
     <link href="<?= base_url("node_modules/bootstrap/dist/css/bootstrap.min.css") ?>" rel="stylesheet">
     <!-- Font Awesome (ikon) -->
@@ -34,7 +35,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?= base_url("/") ?>">
                 <img src="logo-belmon2.png" alt="Belmontransport" height="60">
             </a>
 
